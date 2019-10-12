@@ -83,16 +83,12 @@
                 <div class="title m-b-md">
                     Laravel
                 </div>
-
+            
                 <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    <a href="{{url('home')}}">H0me</a>
+                    <a href="{{url('contact')}}">C0ntact</a>
+                    <a href="{{url('about')}}">Ab0ut</a>
+
                 </div>
             </div>
         </div>
