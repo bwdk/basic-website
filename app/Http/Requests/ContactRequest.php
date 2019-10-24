@@ -26,8 +26,31 @@ class ContactRequest extends FormRequest
     {
         return [
             
-            'name' => 'required'
-            'email' => 'required|email:rfc,dns'
+            'name' => 'required',
+            'email' => 'required|email',
+            'subject' => 'required',
+            'message' => 'required'
         ];
+    }
+
+    public function messages(){
+
+        return [
+
+            'name.required' => 'You should field the name',
+            /*'email.required' => 'You should field the email',*/
+            'subject.required' => 'You should field the subject',
+            'message.required' => 'You should field the message'
+
+        ];
+    }
+
+    public function attributes() {
+
+         return[
+
+        'email' => 'Email Address'
+            
+         ];
     }
 }
