@@ -85,9 +85,10 @@
                 </div>
             
                 <div class="links">
-                    <a href="{{url('home')}}">H0me</a>
-                    <a href="{{url('contact')}}">C0ntact</a>
-                    <a href="{{url('about')}}">Ab0ut</a>
+                    <!--a href="{{url('home')}}">Home</a-->
+                    <a href="{{url('page')}}">Page</a>
+                    <a href="{{url('contact')}}">Contact</a>
+                    <a href="{{url('about')}}">About</a>
 
                 </div>
             </div>

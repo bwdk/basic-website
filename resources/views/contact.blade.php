@@ -1,4 +1,5 @@
 @extends('layout.app')
 
 @section('content')
-<h1>C0ntact</h1>
+<h1>Contact</h1>
+@endsection
