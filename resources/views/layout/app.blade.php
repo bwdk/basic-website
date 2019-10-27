@@ -13,6 +13,9 @@
         @if (Request::is('page'))
              @include('inc.showcase')
         @endif
+
+        @include('inc.messages')
+        
         <div class="row">
             <div class="col-md-8 col-lg-8">
                 @yield('content')
@@ -28,7 +31,7 @@
 <footer id="footer" class="text-center">
     <p>Copyright 2019 &copy; BKO</p>
         @section('links')
-        <a href="{{ url('home') }}">Home</a> / <a href="{{ url('page') }}">Page</a> / <a href="{{ url('contact') }}">Contact</a> / <a href="{{ url('about') }}">About</a> / <a href="{{ url('/') }}">Welcome</a>  
+        <a href="{{ url('/') }}">Welcome</a> / <a href="{{ url('page') }}">Page</a> / <a href="{{ url('contact') }}">Contact</a> / <a href="{{ url('about') }}">About</a> 
 </footer>
 </body>
 </html>
