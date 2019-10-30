@@ -22,6 +22,9 @@ Route::get('contact', 'PagesController@getContact')->name('contact');
 Route::get('about', 'PagesController@getAbout')->name('about');
 
 Route::get('todos', 'TodosController@index')->name('todos');
+
+Route::resource('todo', 'TodosController');
+
 /*Route::get('/home', function () {
     return view('home');
 })->name('home');

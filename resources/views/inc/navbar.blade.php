@@ -16,6 +16,9 @@
         <li class="nav-item">
           <a class="nav-link {{ Request::route()->getName() === 'about' ? 'active' : '' }}" href="{{ route('about') }}">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::route()->getName() === 'todos' ? 'active' : '' }}" href="{{ route('todos') }}">ToDos</a>
+        </li>
         <!-- En utilisant Request::is pour le chemin de la page -->
         <li class="nav-item">
                 <a class="nav-link {{ Request::is('contact') ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>

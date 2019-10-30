@@ -14,8 +14,8 @@ class TodosController extends Controller
      */
     public function index()
     {
-        $todos = Todo::get();
-        //dd($todos);
+        $todos = Todo::orderBy('created_at', 'desc')->get();
+      
         return view('todos')->with('todos', $todos);
     }
 
@@ -26,7 +26,7 @@ class TodosController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -37,7 +37,23 @@ class TodosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request,
+        [
+                'title'=>'required',
+                'content'=>'required',
+                'due'=>'required'
+        ]
+
+        );
+        
+        $todo = new Todo();
+        $todo->title = $request->input('title');
+        $todo->content = $request->input('content');
+        $todo->due = $request->input('due');
+        $todo->save();
+
+        return redirect('/todos')->with('success', 'Todo created successfully');
+
     }
 
     /**
@@ -48,7 +64,9 @@ class TodosController extends Controller
      */
     public function show($id)
     {
-        //
+        $todo = Todo::find($id);
+
+        return view('show-todos')->with('todo', $todo);
     }
 
     /**
@@ -59,7 +77,11 @@ class TodosController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $todo = Todo::find($id);
+
+        return view('edit')->with('todo', $todo);
+    
     }
 
     /**
@@ -71,7 +93,13 @@ class TodosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $todo = Todo::find($id);
+        $todo->title = $request->input('title');
+        $todo->content = $request->input('content');
+        $todo->due = $request->input('due');
+        $todo->save();
+
+        return redirect('/todos')->with('success', 'Todo edited successfully');
     }
 
     /**
@@ -82,6 +110,12 @@ class TodosController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $todo = Todo::find($id);
+        $todo->delete();
+
+        return redirect('/todos')->with('success', 'Todo deleted successfully');
+
     }
+
+
 }

@@ -8,8 +8,13 @@ use App\Models\Message;
 
 class ContactController extends Controller
 {
-    public function submit(ContactRequest $request){
+    
+    
+    public function submit(ContactRequest $request)
+    
+    {
 
+        
         $message = new Message();
         $message->name = $request->input('name');
         $message->email = $request->input('email');
@@ -25,7 +30,7 @@ class ContactController extends Controller
 
     public function getMessages() {
 
-        $messages = Message::all();
+        $messages = Message::orderBy('created_at', 'desc')->get();
         
         return view('messages', ['messages' => $messages]);
     }
